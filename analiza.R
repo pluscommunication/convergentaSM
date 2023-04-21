@@ -26,20 +26,9 @@ date %>%
   ylab("World political leaders") + xlab("Number of posts") 
 
 
-dependent_variable <- date$ER
-independent_variables <- date$Fans
-
-regression_model <- lm(dependent_variable ~ independent_variables, data = date)
-summary(regression_model)
-
-ggplot(data = date, aes(x = Fans, y = ER)) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  labs(x = "Numar de fani", y = "Rata de interactiune", title = "Analiza de regresie")
-
 #new
 library(tm)
-corpus <- Corpus(DirSource(directory="D:/OneDrive - Universitatea „OVIDIUS”/R/convergenta SM/Mesaje"))
+corpus <- Corpus(DirSource(directory="D:/R Projects/convergentaSM/Mesaje"))
 summary(corpus)
 
 #cleaning
@@ -95,7 +84,35 @@ ggplot(date, aes(x = Page, y = ER)) +
 
 ggplot(data = date, aes(x = Page, y = ER, fill = Page)) + 
   geom_boxplot() + 
- facet_wrap(~Page, ncol = 4, scales = "free_x") +
+  facet_wrap(~tone, ncol = 4, scales = "free_x")
+  facet_wrap(~Page, ncol = 4, scales = "free_x") +
  theme_minimal()
 
+date$Message <- gsub("@[[:alpha:]]*","", date$Message)
+text_corpus <- Corpus(VectorSource(date$Message))
+text_corpus <- tm_map(text_corpus, tolower)
+text_corpus <- tm_map(text_corpus, removeWords, c("rt", "re", "amp"))
+text_corpus <- tm_map(text_corpus, removeWords, stopwords("english"))
+text_corpus <- tm_map(text_corpus, removePunctuation)
+text_df <- data.frame(text_clean = get("content", text_corpus), stringsAsFactors = FALSE)
+date <- cbind.data.frame(date, text_df)
+date_sentiment <- analyzeSentiment(date$text_clean)
+date_sentiment <- dplyr::select(date_sentiment, 
+                                           SentimentGI, SentimentHE,
+                                           SentimentLM, SentimentQDAP, 
+                                           WordCount)
+date_sentiment <- dplyr::mutate(date_sentiment, 
+                                           mean_sentiment = rowMeans(date_sentiment[,-5]))
+date_sentiment <- dplyr::select(date_sentiment, 
+                                           WordCount, 
+                                           mean_sentiment)
+date <- cbind.data.frame(date, date_sentiment)
+date_negative <- filter(date, mean_sentiment < 0); date_negative$tone <- "negative"
+date_pozitive <- filter(date, mean_sentiment > 0); date_pozitive$tone <- "pozitive"
+date <- rbind(date_negative, date_pozitive)
+ggplot(date, aes(created_at, mean_sentiment)) + geom_bin2d(colour="blue") + 
+  scale_fill_gradient(low="light blue", high="dark blue") +
+  geom_hline(yintercept=0, linetype="dashed", color = "red", size = 1.5) +
+  ylab("Sentiment Indicator Average") + xlab("Months") +
+  facet_wrap(~Page, ncol = 3, scales="free_x") + theme_minimal() + theme(legend.position = "none")
 
