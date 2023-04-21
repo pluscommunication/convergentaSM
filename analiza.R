@@ -82,10 +82,9 @@ ggplot(date, aes(x = Page, y = ER)) +
        x = "Page",
        y = "Engagement Rate")
 
-ggplot(data = date, aes(x = Page, y = ER, fill = Page)) + 
+ggplot(data = date, aes(x = Page, y = ER, fill = tone)) + 
   geom_boxplot() + 
-  facet_wrap(~tone, ncol = 4, scales = "free_x")
-  facet_wrap(~Page, ncol = 4, scales = "free_x") +
+  facet_wrap(~Page, ncol = 4, scales = "free_x")+
  theme_minimal()
 
 date$Message <- gsub("@[[:alpha:]]*","", date$Message)
