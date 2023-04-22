@@ -10,7 +10,7 @@ youtube <- read_xlsx("youtube.xlsx"); youtube$Page <- "Youtube"; youtube$ER = yo
 date <- rbind(facebook,twitter, youtube,instagram); date$ER = date$Reactions/date$Fans
 
 #Salvare set de date####
-write_xlsx(x = date, path = "fbbucha.xlsx", col_names = TRUE)
+write_xlsx(x = date, path = "date.xlsx", col_names = TRUE)
 
 #Nr. postari / canal####
 date %>%
@@ -105,4 +105,18 @@ mean_ER <- data.frame(Platforma = c("Facebook", "Instagram", "Twitter", "YouTube
 barplot(mean_ER$Media_ER, names.arg = mean_ER$Platforma, col = "blue",
         xlab = "Platforme sociale", ylab = "Media rata de angajament (ER)")
 
+<<<<<<< HEAD
+library(ggplot2)
+ggplot(date, aes(x = Page, y = ER)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Comparatie rata de angajament in functie de Page",
+       x = "Page",
+       y = "Engagement Rate")
 
+ggplot(data = date, aes(x = Page, y = ER, fill = tone)) + 
+  geom_boxplot() + 
+  facet_wrap(~Page, ncol = 4, scales = "free_x")+
+ theme_minimal()
+=======
+
+>>>>>>> 64c9f5e7c3b08194aec30a6a44ad1c856621970d
