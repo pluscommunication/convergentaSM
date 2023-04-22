@@ -10,7 +10,7 @@ youtube <- read_xlsx("youtube.xlsx"); youtube$Page <- "Youtube"; youtube$ER = yo
 date <- rbind(facebook,twitter, youtube,instagram); date$ER = date$Reactions/date$Fans
 
 #Salvare set de date####
-write_xlsx(x = date, path = "fbbucha.xlsx", col_names = TRUE)
+write_xlsx(x = date, path = "date.xlsx", col_names = TRUE)
 
 #Nr. postari / canal####
 date %>%

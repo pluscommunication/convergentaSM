@@ -1,28 +1,27 @@
 ---
-title             : "The title"
-shorttitle        : "Title"
+title             : "From Likes to Change: Assessing the Impact of Citizen Engagement on the European Commission's Social Media Platforms"
+shorttitle        : "From Likes to Change: Assessing the Impact of Citizen Engagement on the European Commission's Social Media Platforms"
 
 author: 
-  - name          : "First Author"
+  - name          : "Tanase Tasențe"
     affiliation   : "1"
     corresponding : yes    # Define only one corresponding author
     address       : "Postal address"
-    email         : "my@email.com"
+    email         : "tanase.tasente@365.univ-ovidius.ro"
     role:         # Contributorship roles (e.g., CRediT, https://casrai.org/credit/)
       - "Conceptualization"
       - "Writing - Original Draft Preparation"
       - "Writing - Review & Editing"
-  - name          : "Ernst-August Doelle"
-    affiliation   : "1,2"
+  - name          : "Cristian Opariuc-Dan"
+    affiliation   : "1"
     role:
       - "Writing - Review & Editing"
       - "Supervision"
 
 affiliation:
   - id            : "1"
-    institution   : "Wilhelm-Wundt-University"
-  - id            : "2"
-    institution   : "Konstanz Business School"
+    institution   : "Faculty of Law and Administrative Sciences, Ovidius University of Constanta, Romania"
+
 
 authornote: |
   Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
@@ -49,7 +48,7 @@ abstract: |
 keywords          : "keywords"
 wordcount         : "X"
 
-bibliography      : "r-references.bib"
+bibliography      : "references.bib"
 
 floatsintext      : no
 linenumbers       : yes
@@ -66,7 +65,7 @@ output            : papaja::apa6_pdf
 
 ```{r setup, include = FALSE}
 library("papaja")
-r_refs("r-references.bib")
+r_refs("references.bib")
 ```
 
 ```{r analysis-preferences}
@@ -74,20 +73,39 @@ r_refs("r-references.bib")
 set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
+# Introduction
+In recent years, the rise of social media platforms has led to significant changes in the way institutions, including public organizations, communicate with their audiences. As a result, the importance of citizen engagement in the process of communication through social media has become increasingly recognized. This engagement involves not only a one-way flow of information from public institutions to citizens, but also an interactive dialogue between the two parties.
+The concept of engagement in social media has been studied extensively in recent years, with researchers exploring various aspects of this phenomenon. One such study, conducted by @dolanSocialMediaEngagement2016 approached social media engagement behavior from a uses and gratifications perspective, focusing on the motivations and benefits that users derive from engaging with social media. Meanwhile, the study by @dragsethBuildingStudentEngagement2020 explored how social media can be used to build engagement among students in the context of political science education.
+Another important aspect of engagement in social media is the role it plays in activation campaigns aimed at consumers. @mirbagheriConsumersEngagementSocial2019 conceptualized and developed a scale to measure consumers' engagement with social media activation campaigns. Additionally, @smithTermsEngagementAnalyzing2015a analyzed public engagement with organizations through social media, highlighting the importance of two-way communication between public institutions and citizens.
+The differentiating role of platform type in engagement with social media and social media advertising was explored by @voorveldEngagementSocialMedia2018, who found that the level of engagement varies across different social media platforms.
+In addition to understanding the various aspects of engagement in social media, it is also important to recognize the significance of citizen engagement in the context of public institutions. Citizen engagement plays a critical role in ensuring transparency and accountability in public decision-making processes. Furthermore, engagement with citizens can lead to the development of more effective policies and programs that better serve the needs of the community.
+Moreover, the importance of citizen engagement in the process of communication through social media cannot be overstated. Through social media, public institutions can engage in an interactive dialogue with citizens, build trust, and develop more effective policies and programs. As such, further research, and exploration of the concept of engagement in social media is critical for ensuring that public institutions continue to effectively communicate with and serve the needs of their communities.
+Citizen engagement through social media can also contribute to the empowerment of individuals and groups, giving them a voice in public decision-making processes and enabling them to hold public institutions accountable for their actions. This can help to build stronger, more resilient communities that are better equipped to respond to challenges and opportunities.
+It is also important to note that while social media has the potential to be a powerful tool for citizen engagement, there are also challenges and risks associated with its use. These include issues related to privacy, security, and the spread of misinformation and disinformation. As such, public institutions must be mindful of these risks and take steps to mitigate them, while also leveraging the power of social media to engage with citizens in a meaningful way.
+Overall, the rise of social media has transformed the way public institutions communicate with citizens, placing a greater emphasis on engagement and two-way communication. Understanding the various aspects of engagement in social media is critical for public institutions to effectively communicate with and serve the needs of their communities. By leveraging the power of social media to engage with citizens, public institutions can build trust, empower individuals and groups, and develop more effective policies and programs that better serve the needs of the community.
 
+# Literature review
+In the past few years, social media has risen to become a significant means of communication between public institutions and citizens. This has paved the way for increased citizen engagement in the decision-making process, which is considered essential for fostering trust and enhancing accountability. This literature review delves into the significance of citizen involvement in the communication process of public institutions via social media. It does so by amalgamating and synthesizing the findings of diverse studies, each focusing on various facets of social media and citizen engagement within the European Union. 
+@beneKeepThemEngaged2022 conducted a study exploring the impacts of self-centered social media communication styles on user engagement across 12 European nations. Their findings revealed that social media communication emphasizing user participation and fostering feedback effectively boosts user engagement. Social media users who feel they have a say in the decision-making process are more inclined to engage and participate in conversations. @dewildeAnalyzingCitizenEngagement2022 examined citizen engagement with European politics on social media platforms and discovered that social media holds the potential to increase citizen involvement and participation in the political sphere. They found that social media offers citizens a platform to express their opinions, partake in discussions, and influence policy-making decisions. In a similar vein, @bankstonMigrationSmugglingVirtual2021 investigated the role of social media in migration and smuggling across the European Union's virtual borders. This study concluded that social media platforms offer citizens opportunities to engage in dialogues and share their perspectives on immigration policies.
+@cinelliPromotingEngagementQuality2022, on the other hand, delved into promoting engagement with quality communication in social media. Their findings indicated that employing persuasive language, evoking emotions, and utilizing framing can enhance user engagement. The study recommends that public institutions implement quality communication techniques to boost citizen engagement and participation in policy-making. @mullerSpreadingWordEuropean2022 analyzed the social media attention garnered by European Union agencies and found a positive correlation between increased attention and higher levels of citizen engagement. This study implies that public institutions can augment citizen engagement by effectively utilizing social media to showcase their activities and interact with citizens.
+Additionally, @rusSocialMediaCommunication2021 carried out a case study investigating the representation of the European Commission in Romania via social media communication. The study established that social media communication by public institutions can bolster transparency and accountability, consequently leading to heightened citizen engagement. @hancu-buduiAuditInstitutionsEuropean2020 examined the communication strategies employed by audit institutions in the European Union during the Covid-19 crisis. Their findings suggested that social media can serve as a potent tool for promoting public services and encouraging environmental engagement. The study advocates for public institutions to harness social media to showcase their activities and connect with citizens during times of crisis. @kanolGroupTypeSocial2021a scrutinized the social media engagement tactics of British interest groups on Facebook. They found that group type influences social media engagement strategies, with non-profit groups being more inclined to utilize user-generated content and participatory approaches. The study implies that public institutions can adopt lessons from non-profit groups and employ participatory strategies to elevate citizen engagement.
+Finally, @weiExploringPublicOpinions2021 executed a case study analyzing public opinions on climate change policy in the European Union using Twitter data. The study concluded that social media offers a platform for citizens to discuss climate change policies, suggesting that public institutions should leverage social media to engage with citizens on critical issues like climate change.
 
+# Case study
+## Research objectives
+The overall objective of this research is to analyze and compare the online engagement of the public on various official social media platforms (Facebook, Instagram, Twitter, and YouTube) of the European Commission.
 
-# Methods
-We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
+## Research tool
+The research instrument used in this study involved the extraction and analysis of data from the official Facebook, Twitter, Instagram, and Youtube pages of the European Commission. To collect this data, the Fanpagekarma  platform was used, which is a popular tool for social media analytics and monitoring.
+The data extracted from the platform included the post ID, message content, post type, post date, number of likes, comments, shares, and rounded number of followers for each post made by the European Commission between 24 March 2023 and 20 April 2023. 
+To calculate the engagement rate, the total number of reactions (likes, comments, and shares) was divided by the number of followers. This metric is often used to measure the level of audience interaction with a brand or organization on social media.
 
-## Participants
-
-## Material
-
-## Procedure
+## Overview of data analysis
+The data collected from this research instrument was analyzed using various statistical techniques, including descriptive statistics and ……. Descriptive statistics were used to summarize the data and identify trends and patterns in the engagement rates, likes, comments, and shares for each post type and platform. 
+In this analysis, we will examine the social media performance of the European Commission's Facebook, Instagram, Twitter, and Youtube accounts during the period from 24 March 2023 to 20 April 2023. We will focus on the engagement rate (ER) of each platform, which measures the percentage of followers who engage with a post by liking, commenting, sharing, or otherwise interacting with it.
 
 ## Data analysis
-We used `r cite_r("r-references.bib")` for all our analyses.
+We used `r cite_r("references.bib")` for all our analyses.
 
 
 # Results
