@@ -117,4 +117,3 @@ ggplot(data = date, aes(x = Page, y = ER, fill = tone)) +
   geom_boxplot() + 
   facet_wrap(~Page, ncol = 4, scales = "free_x")+
  theme_minimal()
-
