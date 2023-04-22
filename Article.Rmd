@@ -121,7 +121,7 @@ The data collected from this research instrument was analyzed using various stat
 In this analysis, we will examine the social media performance of the European Commission's Facebook, Instagram, Twitter, and Youtube accounts during the period from 24 March 2023 to 20 April 2023. We will focus on the engagement rate (ER) of each platform, which measures the percentage of followers who engage with a post by liking, commenting, sharing, or otherwise interacting with it.
 
 ## Data analysis
-We used `r cite_r("references.bib")` for all our analyses.
+We used `r cite_r("r-references.bib")` for all our analyses.
 
 
 # Results
