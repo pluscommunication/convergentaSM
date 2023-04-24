@@ -3,14 +3,15 @@ library(writexl);library(tidytext);library(tidyverse);library(readxl);library(tm
 library(lubridate)
 #Importare date####
 
-facebook <- read_xlsx("facebook.xlsx"); facebook$Page <- "Facebook"; facebook$ER = facebook$Reactions/facebook$Fans
-twitter <- read_xlsx("twitter.xlsx"); twitter$Page <- "Twitter"; twitter$ER = twitter$Reactions/twitter$Fans
-instagram <- read_xlsx("instagram.xlsx"); instagram$Page <- "Instagram"; instagram$ER = instagram$Reactions/instagram$Fans
-youtube <- read_xlsx("youtube.xlsx"); youtube$Page <- "Youtube"; youtube$ER = youtube$Reactions/youtube$Fans
-date <- rbind(facebook,twitter, youtube,instagram); date$ER = date$Reactions/date$Fans
+facebook <- read_xlsx("facebook.xlsx"); facebook$Page <- "Facebook"; facebook$ER = facebook$Reactions/facebook$Fans; facebook <- select(facebook, Page, Message, Type, Date, Reactions, Likes, Comments, Shares, Fans, ER)
+twitter <- read_xlsx("twitter.xlsx"); twitter$Page <- "Twitter"; twitter$ER = twitter$Reactions/twitter$Fans; twitter <- select(twitter, Page, Message, Type, Date, Reactions, Likes, Comments, Shares, Fans, ER)
+instagram <- read_xlsx("instagram.xlsx"); instagram$Page <- "Instagram"; instagram$ER = instagram$Reactions/instagram$Fans; instagram <- select(instagram, Page, Message, Type, Date, Reactions, Likes, Comments, Shares, Fans, ER)
+youtube <- read_xlsx("youtube.xlsx"); youtube$Page <- "Youtube"; youtube$ER = youtube$Reactions/youtube$Fans; youtube <- select(youtube, Page, Message, Type, Date, Reactions, Likes, Comments, Shares, Fans, ER)
+date <- rbind(facebook,twitter, youtube,instagram); date <- filter(date, Date >= as.Date("2022-02-24"), Date <= as.Date("2023-04-23"))
 
 #Salvare set de date####
-write_xlsx(x = date, path = "date.xlsx", col_names = TRUE)
+write_xlsx(x = date, path = "date.xlsx", col_names = TRUE); 
+
 
 #Nr. postari / canal####
 date %>%
@@ -105,18 +106,13 @@ mean_ER <- data.frame(Platforma = c("Facebook", "Instagram", "Twitter", "YouTube
 barplot(mean_ER$Media_ER, names.arg = mean_ER$Platforma, col = "blue",
         xlab = "Platforme sociale", ylab = "Media rata de angajament (ER)")
 
-<<<<<<< HEAD
+model <- lm(SentimentGI ~ Reactions + Likes + Comments + Shares, data = date)
+model
+
 library(ggplot2)
-ggplot(date, aes(x = Page, y = ER)) +
-  geom_bar(stat = "identity") +
-  labs(title = "Comparatie rata de angajament in functie de Page",
-       x = "Page",
-       y = "Engagement Rate")
-
-ggplot(data = date, aes(x = Page, y = ER, fill = tone)) + 
-  geom_boxplot() + 
-  facet_wrap(~Page, ncol = 4, scales = "free_x")+
- theme_minimal()
-=======
-
->>>>>>> 64c9f5e7c3b08194aec30a6a44ad1c856621970d
+ggplot(data = date, aes(x = SentimentGI, y = ER)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(title = "Relația dintre scorul de sentiment și rata de angajament",
+       x = "Scor sentiment GI",
+       y = "Rata de angajament") + theme_minimal()

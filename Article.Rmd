@@ -20,14 +20,12 @@ author:
 
 affiliation:
   - id            : "1"
-    institution   : "Ovidius University, Constanța"
+    institution   : "Ovidius University, Constanța - Faculty of Law and Administrative Sciences"
   - id            : "2"
     institution   : "Bucharest University"
 
 authornote: |
-  Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
-
-  Enter author note here.
+  Department of Administrative and Social Sciences
 
 abstract: |
   One or two sentences providing a **basic introduction** to the field,  comprehensible to a scientist in any discipline.
