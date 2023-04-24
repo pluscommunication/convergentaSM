@@ -22,6 +22,10 @@ date %>%
   geom_text(position = position_stack(vjust = .5)) + theme_minimal() +
   ylab("World political leaders") + xlab("Number of posts") 
 
+ggplot(date, aes(Date, ER, colour=Page))+
+  geom_point() +
+  facet_wrap(~Page, ncol = 4, scales="free_x") + theme(legend.position = "none")
+
 #Tonul mesajelor - pozitiv vs. negativ####
 date$Message <- gsub("@[[:alpha:]]*","", date$Message)
 text_corpus <- Corpus(VectorSource(date$Message))
@@ -106,11 +110,11 @@ mean_ER <- data.frame(Platforma = c("Facebook", "Instagram", "Twitter", "YouTube
 barplot(mean_ER$Media_ER, names.arg = mean_ER$Platforma, col = "blue",
         xlab = "Platforme sociale", ylab = "Media rata de angajament (ER)")
 
-model <- lm(SentimentGI ~ Reactions + Likes + Comments + Shares, data = date)
+model <- lm(ER ~ SentimentGI, data = date)
 model
 
 library(ggplot2)
-ggplot(data = date, aes(x = SentimentGI, y = ER)) +
+ggplot(data = date, aes(x = SentimentGI, y = ER, colour=Page)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE, color = "red") +
   labs(title = "Relația dintre scorul de sentiment și rata de angajament",
