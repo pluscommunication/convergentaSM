@@ -7,7 +7,7 @@ facebook <- read_xlsx("facebook.xlsx"); facebook$Page <- "Facebook"; facebook$ER
 twitter <- read_xlsx("twitter.xlsx"); twitter$Page <- "Twitter"; twitter$ER = twitter$Reactions/twitter$Fans; twitter <- select(twitter, Page, Message, Type, Date, Reactions, Likes, Comments, Shares, Fans, ER)
 instagram <- read_xlsx("instagram.xlsx"); instagram$Page <- "Instagram"; instagram$ER = instagram$Reactions/instagram$Fans; instagram <- select(instagram, Page, Message, Type, Date, Reactions, Likes, Comments, Shares, Fans, ER)
 youtube <- read_xlsx("youtube.xlsx"); youtube$Page <- "Youtube"; youtube$ER = youtube$Reactions/youtube$Fans; youtube <- select(youtube, Page, Message, Type, Date, Reactions, Likes, Comments, Shares, Fans, ER)
-date <- rbind(facebook,twitter, youtube,instagram); date <- filter(date, Date >= as.Date("2022-02-24"), Date <= as.Date("2023-04-23"))
+date <- rbind(facebook,twitter, youtube,instagram); date <- filter(date, Date >= as.Date("2020-01-01"), Date <= as.Date("2023-04-23"))
 
 #Salvare set de date####
 write_xlsx(x = date, path = "date.xlsx", col_names = TRUE); 
