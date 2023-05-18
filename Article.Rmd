@@ -65,7 +65,9 @@ header-includes:
 ---
 
 ```{r setup, include = FALSE}
-  library(papaja)
+  library(papaja); library(knitr); library(readxl); library(dplyr); library(psych)
+  library(sasLM);library(rstatix); library(naniar); library(lubridate); library(flextable)
+
   r_refs("r-references.bib")
 ```
 
@@ -111,14 +113,16 @@ The overall objective of this research is to analyze and compare the online enga
 
 ## Research tool
 The research instrument used in this study involved the extraction and analysis of data from the official Facebook, Twitter, Instagram, and Youtube pages of the European Commission. To collect this data, the Fanpagekarma  platform was used, which is a popular tool for social media analytics and monitoring.
+
 The data extracted from the platform included the post ID, message content, post type, post date, number of likes, comments, shares, and rounded number of followers for each post made by the European Commission between 24 March 2023 and 20 April 2023. 
+
 To calculate the engagement rate, the total number of reactions (likes, comments, and shares) was divided by the number of followers. This metric is often used to measure the level of audience interaction with a brand or organization on social media.
 
 ## Overview of data analysis
 The data collected from this research instrument was analyzed using various statistical techniques, including descriptive statistics and ……. Descriptive statistics were used to summarize the data and identify trends and patterns in the engagement rates, likes, comments, and shares for each post type and platform. 
+
 In this analysis, we will examine the social media performance of the European Commission's Facebook, Instagram, Twitter, and Youtube accounts during the period from 24 March 2023 to 20 April 2023. We will focus on the engagement rate (ER) of each platform, which measures the percentage of followers who engage with a post by liking, commenting, sharing, or otherwise interacting with it.
 
-## Data analysis
 We used `r cite_r("r-references.bib")` for all our analyses.
 
 
