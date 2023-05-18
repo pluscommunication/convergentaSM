@@ -12,7 +12,7 @@ library(lubridate); library(flextable)
 
 # Loading dataset and computing ER
 load(file = "Raw data.RData"); head(ds)
-ds$ER = ds$Reactions / ds$Fans; ds <- ds %>% filter(ER != Inf)
+ds$ER = ds$Reactions / ds$Fans; ds <- ds %>% filter(ER != Inf); save(ds, file = "Raw data.RData")
 
 # Outliers detection and treatment ####
 tmp <- ds %>% filter(Page == "Facebook")
