@@ -14,7 +14,7 @@ tc <- tm_map(tc, removeWords, stopwords("english")); tc <- tm_map(tc, removePunc
 ## Updating Message field in main dataset
 ds$Message  <- data.frame(Message = get("content", tc), stringsAsFactors = FALSE)$Message
 ## Doing sentiment analysis and updating main dataset
-ds <- cbind(ds, analyzeSentiment(ds$Message)); save(ds, file = "Row Sentiment.RData")
+ds <- cbind(ds, analyzeSentiment(ds$Message)); save(ds, file = "Raw Sentiment.RData")
 ## Plotting sentiment data
 names(ds); rm(tc)
 ggplot(data = ds, aes(x = Page, y = ER, fill=Page)) + 
