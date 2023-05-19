@@ -10,7 +10,6 @@ if(!require(nortest)) install.packages("nortest")
 library(dplyr); library(caret); library(rstatix); library(ggpubr); library(lm.beta)
 library(relaimpo); library(nortest)
 
-
 # Function for p-values management ####
 p <- function(x, digits = 3){
   if (x < 10^-digits) return(paste('<', 10^-digits))
@@ -29,13 +28,13 @@ ds.pur <- rbind(ds.estim, ds.asses); ds.pur$Set <- factor(ds.pur$Set); names(ds.
 # Descriptive analysis on estimation and assessment sets ####
 ds.estim %>% get_summary_stats(type = "full", show = c("n", "min", "max", "median", "mean", "sd"))
 ds.asses %>% get_summary_stats(type = "full", show = c("n", "min", "max", "median", "mean", "sd"))
-t_test(ER ~ Set, data = ds.pur); t_test(NegativityGI ~ Set, data = ds.pur)
+t_test(ER ~ Set, data = ds.pur); t_test( ~ Set, data = ds.pur); t_test(PositivityGI ~ Set, data = ds.pur)
 
-ds.estim <- ds.pur
+# ds.estim <- ds.pur
 # Assumptions assessment ####
 ## I. Normality of dependent variable
 ad.test(ds.estim$ER)
-out <- ds.estim %>% identify_outliers(ER); out <- out[, c('ER', 'is.extreme')]; 
+out <- ds.estim %>% identify_outliers(ER); out <- out[, c('ER', 'is.extreme')]
 range(out[out$is.extreme == "TRUE",]$ER)
 
 ggqqplot(ds.estim, x="ER", bxp.errorbar = T,
@@ -51,6 +50,10 @@ ggplot(ds.estim, aes(y = ER, x = PositivityGI)) +
 
 # Regression analysis ####
 mod <- lm(ER ~ NegativityGI + PositivityGI, 
+          data = ds.estim); mod.std <- lm.beta(mod); summary(mod.std)
+
+ds.estim$Page <- factor(ds.estim$Page, levels = c("Twitter", "Facebook", "Instagram", "Youtube"))
+mod <- lm(ER ~ NegativityGI + PositivityGI + factor(Page), 
           data = ds.estim); mod.std <- lm.beta(mod); summary(mod.std)
 
 # Relative predictors importance ####

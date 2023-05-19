@@ -51,7 +51,7 @@ ds.pur <- rbind(ds.pur, tmp)
 rm(out, tmp); miss <- miss_var_summary(ds.pur); miss
 colnames(miss) <- c("Variable", "N", "%")
 ## Select only complete cases
-complete <- ds.pur[complete.cases(ds.pur),]
+#complete <- ds.pur[complete.cases(ds.pur),]
 complete <- ds.pur %>% dplyr::filter(!is.na(ER))
 loss <- nrow(ds.pur) - nrow(complete); ds.pur <- complete
 prc.miss <- as.numeric(round(miss[4,3], 2)); rm(complete, miss)
@@ -115,5 +115,3 @@ print.univar$Shapiro <- NULL; print.univar$p <- NULL;print.univar$R <- NULL
 print.univar$`SE Skew` <- NULL; print.univar$`SE Kurt` <- NULL
 colnames(print.univar) <- c("Variables", "N", "Mean", "SD", "Median", "Min", "Max","Skew (SE)", "Kurt (SE)")
 flextable(print.univar) %>% theme_apa() %>% save_as_docx(path = "Documents/Tab_Univariates_Pure.docx")
-
-

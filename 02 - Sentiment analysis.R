@@ -1,7 +1,9 @@
 # Installing and loading libraries
 if (!require(tm)) install.packages("tm")
+if (!require(SentimentAnalysis)) install.packages("SentimentAnalysis")
+if (!require(ggplot2)) install.packages("ggplot2")
 
-library(tm)
+library(tm); library(SentimentAnalysis); library(ggplot2)
 
 # Loading datasets
 load(file = "Raw data.RData"); load(file = "Pure data.RData"); head(ds)
@@ -23,7 +25,7 @@ ggplot(data = ds, aes(x = Page, y = ER, fill=Page)) +
   theme_minimal()
 ggplot(ds, aes(Date, SentimentGI)) + geom_bin2d(colour="blue") + 
   scale_fill_gradient(low="light blue", high="dark blue") +
-  geom_hline(yintercept=0, linetype="dashed", color = "red", size = 1.5) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red", size = 1.5) +
   ylab("Sentiment Indicator Values (Harvard-IV dictionary)") + xlab("Months") +
   facet_wrap(~Page, ncol = 4, scales="free_x") + theme_minimal() + theme(legend.position = "none")
 

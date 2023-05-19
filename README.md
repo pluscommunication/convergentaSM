@@ -22,7 +22,7 @@ Variabile compozit
 Avem asa:
 - Sa ne legam de evenimente cu impact emotional - invazia 24.02,2022 si bucha - 8 04 2022
 
-H1 - Comunicarile cu impact emotional negativ sunt asociate cu un angajament ridicat
-H2 - Platformele de comunicare modereaza efectul impactului emotional asupra angajamentului 
+H1 - Comunicarile cu impact emotional negativ (NegativityGI, PositivityGI) sunt asociate cu un angajament ridicat (ER)
+H2 - Platformele de comunicare (Page) modereaza efectul impactului emotional asupra angajamentului (ER)
 H3 - In cat timp Influenta comunicarii cu impact emotional negativ asupra angajamentului se normalizeaza
 H3 - Nu stiu cum naiba sa formulam o ipoteza care sa implice o serie temporala.????

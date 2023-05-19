@@ -14,7 +14,7 @@ if (!require(dplyr)) install.packages("dplyr")
 # if (!require(ggplot2)) install.packages("ggplot2")
 # if (!require(lubridate)) install.packages("lubridate")
 # if (!require(scales)) install.packages("scales")
-# if (!require(SentimentAnalysis)) install.packages("SentimentAnalysis")
+
 
 library(readxl); library(dplyr)
 # library(writexl); library(tidytext); library(tidyverse); library(tm); library(textdata)
