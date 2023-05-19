@@ -9,6 +9,7 @@ instagram <- read_xlsx("instagram.xlsx"); instagram$Page <- "Instagram"; instagr
 youtube <- read_xlsx("youtube.xlsx"); youtube$Page <- "Youtube"; youtube$ER = youtube$Reactions/youtube$Fans; youtube <- select(youtube, Page, Message, Type, Date, Reactions, Likes, Comments, Shares, Fans, ER)
 date <- rbind(facebook,twitter, youtube,instagram); date <- filter(date, Date >= as.Date("2022-02-24"), Date <= as.Date("2023-04-23"))
 
+
 #Salvare set de date####
 write_xlsx(x = date, path = "date.xlsx", col_names = TRUE); 
 
