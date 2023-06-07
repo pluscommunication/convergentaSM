@@ -123,11 +123,15 @@ To calculate the engagement rate, the total number of reactions (likes, comments
 
 
 ## Overview of data analysis
+We used `r cite_r("r-references.bib")` for all our analyses.
+
+The initial assumptions assessment was performed by descriptive univariate analysis, data screening for outliers, and missing cases analysis, to verify univariate normality. Finally, a sentiment analysis was performed, and various comparative and regressive techniques was used for hypothesis testing.
+
 The data collected from this research instrument was analyzed using various statistical techniques, including descriptive statistics and ……. Descriptive statistics were used to summarize the data and identify trends and patterns in the engagement rates, likes, comments, and shares for each post type and platform. 
 
 In this analysis, we will examine the social media performance of the European Commission's Facebook, Instagram, Twitter, and Youtube accounts during the period from 24 March 2023 to 20 April 2023. We will focus on the engagement rate (ER) of each platform, which measures the percentage of followers who engage with a post by liking, commenting, sharing, or otherwise interacting with it.
 
-We used `r cite_r("r-references.bib")` for all our analyses.
+
 
 
 # Results
