@@ -84,3 +84,4 @@ diag.mod %>% filter(abs(.hat) > 0.037)
 plot(mod, 4); diag.mod %>% top_n(4, wt = .cooksd)
 # Multicolinearity analysis
 car::vif(mod)
+
