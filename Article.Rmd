@@ -118,6 +118,10 @@ The data extracted from the platform included the post ID, message content, post
 
 To calculate the engagement rate, the total number of reactions (likes, comments, and shares) was divided by the number of followers. This metric is often used to measure the level of audience interaction with a brand or organization on social media.
 
+## The present study
+
+
+
 ## Overview of data analysis
 The data collected from this research instrument was analyzed using various statistical techniques, including descriptive statistics and ……. Descriptive statistics were used to summarize the data and identify trends and patterns in the engagement rates, likes, comments, and shares for each post type and platform. 
 
