@@ -22,7 +22,7 @@ Variabile compozit
 Avem asa:
 - Sa ne legam de evenimente cu impact emotional - invazia 24.02,2022 si bucha - 8 04 2022
 
-H1 - Comunicarile cu impact emotional negativ (NegativityGI, PositivityGI) sunt asociate cu un angajament ridicat (ER)
+H1 - Comunicarile cu impact emotional (NegativityGI, PositivityGI) sunt asociate cu un angajament ridicat (ER)
 H2 - Platformele de comunicare (Page) modereaza efectul impactului emotional asupra angajamentului (ER)
 
 
