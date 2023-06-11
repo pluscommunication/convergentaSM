@@ -25,21 +25,23 @@ ds.estim  <- ds.pur[selection, ]; ds.asses <- ds.pur[-selection, ]; rm(selection
 ds.estim$Set <- "Estimation"; ds.asses$Set <- "Assessment"
 ds.pur <- rbind(ds.estim, ds.asses); ds.pur$Set <- factor(ds.pur$Set); names(ds.pur)
 
+# ds.estim <- ds.pur
+# Assumptions assessment ####
+## I. Normality of dependent variable
+ds.estim <- ds.estim %>% dplyr::filter(ER != 0); ad.test(ds.estim$ER)
+out <- ds.estim %>% identify_outliers(ER); out <- out[, c('ER', 'is.extreme')]; out
+range(out[out$is.extreme == "TRUE",]$ER)
+ds.estim <- ds.estim %>% dplyr::filter(ER <= 0.000929525)
+
+ggqqplot(ds.estim, x="ER", bxp.errorbar = T,
+         xlab = "Theoretical normal", ylab = "Empirical ER distribution")
+plot(density(ds.estim$ER), ylab="Frequency"); polygon(density(ds.estim$ER), col = "dark green")
+
 # Descriptive analysis on estimation and assessment sets ####
 ds.estim %>% get_summary_stats(type = "full", show = c("n", "min", "max", "median", "mean", "sd"))
 ds.asses %>% get_summary_stats(type = "full", show = c("n", "min", "max", "median", "mean", "sd"))
 t_test(ER ~ Set, data = ds.pur); t_test( ~ Set, data = ds.pur); t_test(PositivityGI ~ Set, data = ds.pur)
 
-# ds.estim <- ds.pur
-# Assumptions assessment ####
-## I. Normality of dependent variable
-ad.test(ds.estim$ER)
-out <- ds.estim %>% identify_outliers(ER); out <- out[, c('ER', 'is.extreme')]
-range(out[out$is.extreme == "TRUE",]$ER)
-
-ggqqplot(ds.estim, x="ER", bxp.errorbar = T,
-         xlab = "Theoretical normal", ylab = "Empirical ER distribution")
-plot(density(ds.estim$ER), ylab="Frequency"); polygon(density(ds.estim$ER), col = "dark green")
 
 ## Liniarity check
 # 2. Analiza liniaritatii relatiei
@@ -80,7 +82,9 @@ par(mfrow = c(2, 2)); plot(mod)
 diag.mod %>% identify_outliers(.std.resid)
 # HLV Values analysis
 diag.mod %>% filter(abs(.hat) > 0.037)
+
 ## Cook's distances analysis
 plot(mod, 4); diag.mod %>% top_n(4, wt = .cooksd)
 # Multicolinearity analysis
 car::vif(mod)
+
