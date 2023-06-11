@@ -53,3 +53,5 @@ st.next <- ggplot(ds.pur, aes(Date, SentimentGI)) + geom_bin2d(colour="blue") +
   geom_hline(yintercept=0, linetype="dashed", color = "red", size = 1.5) +
   ylab("Sentiment Indicator Values (Harvard-IV dictionary). Extremes excluded") + xlab("Months") +
   facet_wrap(~Page, ncol = 4, scales="free_x") + theme_minimal() + theme(legend.position = "none"); st.next
+
+
