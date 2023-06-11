@@ -35,3 +35,6 @@ po/*~
 rsconnect/
 Article.tex
 Article.log
+Article.fff
+Article.ttt
+Article_files

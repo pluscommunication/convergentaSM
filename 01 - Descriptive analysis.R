@@ -14,6 +14,10 @@ library(lubridate); library(flextable)
 load(file = "Raw data.RData"); head(ds)
 ds$ER = ds$Reactions / ds$Fans; ds <- ds %>% filter(ER != Inf); save(ds, file = "Raw data.RData")
 
+# Data period extraction
+dt.min <- paste(month(min(ds$Date), label = T), year(min(ds$Date)))
+dt.max <- paste(month(max(ds$Date), label = T), year(max(ds$Date)))
+
 # Outliers detection and treatment ####
 tmp <- ds %>% filter(Page == "Facebook")
 out <- tmp %>% rstatix::identify_outliers(ER); out <- out[, c('ER', 'is.extreme')]
@@ -89,6 +93,7 @@ print.univar$Shapiro <- NULL; print.univar$p <- NULL;print.univar$R <- NULL
 print.univar$`SE Skew` <- NULL; print.univar$`SE Kurt` <- NULL
 colnames(print.univar) <- c("Variables", "N", "Mean", "SD", "Median", "Min", "Max","Skew (SE)", "Kurt (SE)")
 flextable(print.univar) %>% theme_apa() %>% save_as_docx(path = "Documents/Tab_Univariates_Row.docx")
+print.univar.row <- print.univar
 
 ## Purified data ####
 univar <- psych::describeBy(ds.pur$ER, group = ds.pur$Page)
@@ -115,3 +120,6 @@ print.univar$Shapiro <- NULL; print.univar$p <- NULL;print.univar$R <- NULL
 print.univar$`SE Skew` <- NULL; print.univar$`SE Kurt` <- NULL
 colnames(print.univar) <- c("Variables", "N", "Mean", "SD", "Median", "Min", "Max","Skew (SE)", "Kurt (SE)")
 flextable(print.univar) %>% theme_apa() %>% save_as_docx(path = "Documents/Tab_Univariates_Pure.docx")
+print.univar.pur <- print.univar
+
+
