@@ -24,5 +24,6 @@ Avem asa:
 
 H1 - Comunicarile cu impact emotional negativ (NegativityGI, PositivityGI) sunt asociate cu un angajament ridicat (ER)
 H2 - Platformele de comunicare (Page) modereaza efectul impactului emotional asupra angajamentului (ER)
-H3 - In cat timp Influenta comunicarii cu impact emotional negativ asupra angajamentului se normalizeaza
+H3 - Există o corelație temporală determinabilă între declanșarea unei crize care inițial generează un nivel ridicat de angajament în comunitatea online și momentul în care acel angajament începe să scadă, pe măsură ce publicul se adaptează la noua situație
+H3b - Influenta comunicarii cu impact negativ asupra angajamentului in relati
 H3 - Nu stiu cum naiba sa formulam o ipoteza care sa implice o serie temporala.????
