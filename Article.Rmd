@@ -45,7 +45,7 @@ authornote: |
 abstract: |
   This study investigates the role of emotional resonance in social media communications from the European Commission (EC) and its impact on public engagement across different platforms (Facebook, Instagram, Twitter, and YouTube). Our results indicate that messages with emotional resonance significantly boost public engagement levels, with the effects varying based on the specific platform. We further reveal a notable influence of both positive and negative emotional resonance on engagement, with the latter exerting a stronger impact. This research expands our understanding of engagement dynamics on different platforms, stressing the importance of tailored platform-specific strategies. The findings underscore the crucial role of social media in enhancing public involvement in policy dialogue and emphasize the need for public institutions to incorporate emotional resonance into their communication strategies, accounting for unique platform characteristics. These insights provide a foundation for future discussions and research into optimizing communication strategies within a multi-platform environment, which will shape the future of digital governance and public policymaking.
 keywords          : "social media, public institutions, emotional resonance, public engagement, platform-specific strategies, digital governance"
-wordcount         : "X"
+wordcount         : "4067 words in text body 1034 words in reference section"
 bibliography      : ["r-references.bib", "references.bib"]
 floatsintext      : no
 linenumbers       : yes
@@ -67,6 +67,8 @@ header-includes:
 ```{r setup, include = FALSE}
   library(papaja); library(knitr); library(readxl); library(dplyr); library(psych)
   library(sasLM);library(rstatix); library(naniar); library(lubridate); library(flextable)
+  library(caret); library(ggpubr); library(lm.beta); library(relaimpo); library(nortest)
+  library(interactions); library(misty); library(tm); library(SentimentAnalysis); library(ggplot2)
 
   r_refs("r-references.bib")
 ```
