@@ -231,7 +231,7 @@ Between positive emotional resonance and engagement rate was no statistically si
 
 \center _Please Insert Fig. \@ref(fig:moderation-2) around here_ \justify
 
-Compared to Twetter posts, if the messages with positive emotional resonance were posted on Instagram or Youtube, the engagement rate increased statistically significant and the effect was most powerfull on Instagram than on Youtube. No interaction effect was observed on Facebook related on positive emotional resonance *(B=`r m3.PozFbk.B`, t=`r m3.PozFbk.t`, p  `r m3.PozFbk.p`, \(\beta\)=`r m3.PozFbk.Bt`)*
+Compared to Twitter posts, if the messages with positive emotional resonance were posted on Instagram or Youtube, the engagement rate increased statistically significant and the effect was most powerfull on Instagram than on Youtube. No interaction effect was observed on Facebook related on positive emotional resonance *(B=`r m3.PozFbk.B`, t=`r m3.PozFbk.t`, p  `r m3.PozFbk.p`, \(\beta\)=`r m3.PozFbk.Bt`)*
 
 # Discussion
 This investigation commenced with the aim of assessing the impact of citizen engagement on the European Commission's social media platforms by specifically evaluating the influence of emotionally resonant communications on public engagement levels. The discussion here explores the findings derived from the study and their implications, juxtaposing them against the extant body of research on social media engagement, public institutional communication, and the role of emotional resonance in these facets.
