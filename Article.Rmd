@@ -178,9 +178,14 @@ Results suggested that all engagement rates were highly positively skewed and hi
 ```{r, sent-NEXT, out.width = '510px', fig.align='center', fig.cap='Sentiment analysis chart on social media channels. Extremes excluded', warning=FALSE}
   st.next
 ```
-
+## Sentiment analysis
 A comprehensive sentiment analysis was conducted on data, both with (see Fig. \@ref(fig:boxplot-EXT) and Fig. \@ref(fig:sent-EXT)) and without extreme outliers (see Fig. \@ref(fig:boxplot-NEXT) and Fig. \@ref(fig:sent-NEXT)) suggesting distinctive tonal variations in the discourse employed by the European Commission across different social media platforms.
-In the case of Facebook, the sentiment indicator's mean value was determined to be 0.14, indicative of a marginally positive tone. The sentiment ranged between -0.27 and 0.63. The discourse with a negative connotation averaged at -0.08, while the discourse with a positive undertone demonstrated a mean of 0.22, thereby further substantiating a propensity for positivity.
+
+\center _Please Insert Figures \@ref(fig:boxplot-EXT) and \@ref(fig:sent-EXT) around here_ \justify
+
+\center _Please Insert Figures \@ref(fig:boxplot-NEXT) and \@ref(fig:sent-NEXT) around here_ \justify
+
+In the case of Facebook, the sentiment's indicator mean value was `r fb.sent.mean.next` (SD=`r fb.sent.sd.next`), showed a tendency to a positive tone (M=`r fb.sent.mean.ext`, SD=`r fb.sent.sd.ext` with extreme outliers). The sentiment ranged between `r fb.sent.min.next` and `r fb.sent.max.next` (`r fb.sent.min.ext` and `r fb.sent.max.ext` with extreme outliers), the discourse with a negative connotation averaged at `r fb.neg.mean.next` (SD=`r fb.neg.sd.next`), while the discourse with a positive undertone demonstrated a mean of `r fb.poz.mean.next` (SD=`r fb.poz.sd.next`), thereby further substantiating a propensity for positivity (M=`r fb.neg.mean.ext`, SD=`r fb.neg.sd.ext`, respectively M=`r fb.poz.mean.ext`, SD=`r fb.poz.sd.ext` with extreme outliers).
 
 Akin to Facebook, the sentiment indicator on Instagram averaged at 0.12, which points towards a mildly positive sentiment, with the spectrum extending from -0.22 to 0.46. The mean sentiment score for negatively perceived discourse was -0.07, and the positively perceived discourse showed an average of 0.20, once again suggesting a bend towards positive discourse on this platform.
 
