@@ -15,8 +15,9 @@ tc <- tm_map(tc, tolower); tc <- tm_map(tc, removeWords, c("rt", "re", "amp"))
 tc <- tm_map(tc, removeWords, stopwords("english")); tc <- tm_map(tc, removePunctuation)
 ## Updating Message field in main dataset
 ds$Message  <- data.frame(Message = get("content", tc), stringsAsFactors = FALSE)$Message
-## Doing sentiment analysis and updating main dataset
+## *******  Doing sentiment analysis and updating main dataset ********
 #ds <- cbind(ds, analyzeSentiment(ds$Message)); save(ds, file = "Raw Sentiment.RData")
+## ********************************************************************
 ## Plotting sentiment data
 load(file = "Raw Sentiment.RData"); names(ds); rm(tc)
 bp.ext <- ggplot(data = ds, aes(x = Page, y = ER, fill=Page)) + 
@@ -38,8 +39,9 @@ tc <- tm_map(tc, tolower); tc <- tm_map(tc, removeWords, c("rt", "re", "amp"))
 tc <- tm_map(tc, removeWords, stopwords("english")); tc <- tm_map(tc, removePunctuation)
 ## Updating Message field in main dataset
 ds.pur$Message  <- data.frame(Message = get("content", tc), stringsAsFactors = FALSE)$Message
-## Doing sentiment analysis and updating main dataset
+## ******* Doing sentiment analysis and updating main dataset ********
 #ds.pur <- cbind(ds.pur, analyzeSentiment(ds.pur$Message)); save(ds.pur, file = "Pure Sentiment.RData")
+## *******************************************************************
 ## Plotting sentiment data
 load(file = "Pure Sentiment.RData"); names(ds.pur); rm(tc)
 bp.next <- ggplot(data = ds.pur, aes(x = Page, y = ER, fill=Page)) + 
