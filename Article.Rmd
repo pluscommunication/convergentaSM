@@ -45,7 +45,7 @@ authornote: |
 abstract: |
   This study investigates the role of emotional resonance in social media communications from the European Commission (EC) and its impact on public engagement across different platforms (Facebook, Instagram, Twitter, and YouTube). Our results indicate that messages with emotional resonance significantly boost public engagement levels, with the effects varying based on the specific platform. We further reveal a notable influence of both positive and negative emotional resonance on engagement, with the latter exerting a stronger impact. This research expands our understanding of engagement dynamics on different platforms, stressing the importance of tailored platform-specific strategies. The findings underscore the crucial role of social media in enhancing public involvement in policy dialogue and emphasize the need for public institutions to incorporate emotional resonance into their communication strategies, accounting for unique platform characteristics. These insights provide a foundation for future discussions and research into optimizing communication strategies within a multi-platform environment, which will shape the future of digital governance and public policymaking.
 keywords          : "social media, public institutions, emotional resonance, public engagement, platform-specific strategies, digital governance"
-wordcount         : "X"
+wordcount         : "4067 words in text body 1034 words in reference section"
 bibliography      : ["r-references.bib", "references.bib"]
 floatsintext      : no
 linenumbers       : yes
@@ -67,6 +67,8 @@ header-includes:
 ```{r setup, include = FALSE}
   library(papaja); library(knitr); library(readxl); library(dplyr); library(psych)
   library(sasLM);library(rstatix); library(naniar); library(lubridate); library(flextable)
+  library(caret); library(ggpubr); library(lm.beta); library(relaimpo); library(nortest)
+  library(interactions); library(misty); library(tm); library(SentimentAnalysis); library(ggplot2)
 
   r_refs("r-references.bib")
 ```
@@ -199,7 +201,7 @@ In conclusion, despite a general inclination towards a slightly positive mean se
   source("03 - Regressions.R")
 ```
 
-Finally, a linear regression model was fitted using `r est.n` cases from the purified dataset, values on engagement rate over .000929525 were removed because of extreme outliers and the normality of dependent variable was not met (Anderson-Darling test =`r ad.stat`, p `r ad.p`).
+A linear regression model was fitted using `r est.n` cases from the purified dataset, values on engagement rate over .000929525 were removed because of extreme outliers and the normality of dependent variable was not met (Anderson-Darling test =`r ad.stat`, p `r ad.p`).
 
 The results suggested that the null hypothesis **H~0~:** *Communications with emotional resonance are not associated with higher public engagement levels* could be rejected (F(`r m1.F.df1`, `r m1.F.df2`)=`r m1.F`, p `r m1.F.p`) and the *H~1~*: *Communications with emotional resonance are associated with higher public engagement levels* was plausible, however the engagement levels was explained only by `r m1.r2.p`% by the positive and negative resonance communications (R^2^=`r m1.r2`, RSR=`r m1.RSE`).
 
@@ -209,6 +211,27 @@ Furthermore, we observed that the effect of social media platform was statistica
 
 Negative emotional resonance was still statistically significant positively associated by public engagement *(B=`r m2.neg.B`, t=`r m2.neg.t`, p  `r m2.neg.p`, \(\beta\)=`r m2.neg.Bt`)*, but not positive emotional resonance *(B=`r m2.poz.B`, t=`r m2.poz.t`, p  `r m2.poz.p`, \(\beta\)=`r m2.poz.Bt`)*, and compared by Twitter, engagement rates increased statistically significant on Facebook *(B=`r m2.Fcb.B`, t=`r m2.Fcb.t`, p  `r m2.Fcb.p`, \(\beta\)=`r m2.Fcb.Bt`)*, Instagram *(B=`r m2.Isg.B`, t=`r m2.Isg.t`, p  `r m2.Isg.p`, \(\beta\)=`r m2.Isg.Bt`)* and Youtube *(B=`r m2.Ytb.B`, t=`r m2.Ytb.t`, p  `r m2.Ytb.p`, \(\beta\)=`r m2.Ytb.Bt`)*.
 
+Finally, the hypothesis *H~3~*: *The effect of emotional resonance on public engagement is moderated by the social media platform utilized* was also plausible (F(`r m3.F.df1`, `r m3.F.df2`)=`r m3.F`, p `r m3.F.p`), the model with interaction terms explaining `r m3.r2.p`% of engagement rate's variance (R^2^=`r m3.r2`, RSR=`r m3.RSE`) and had a statistically significant better prediction power than the second model (F(`r mod.com.df1`, `r mod.com.df2`)=`r mod.com.F`, p `r mod.com.p`).
+
+The main effect of negative emotional resonance was statistically significant *(B=`r m3.neg.B`, t=`r m3.neg.t`, p  `r m3.neg.p`, \(\beta\)=`r m3.neg.Bt`)*, but not the main effect of positive emotional resonance *(B=`r m3.poz.B`, t=`r m3.poz.t`, p  `r m3.poz.p`, \(\beta\)=`r m3.poz.Bt`)*, and both were moderated by social network. Furthermore, compared to Twitter influence, Facebook *(B=`r m3.Fbk.B`, t=`r m3.Fbk.t`, p  `r m3.Fbk.p`, \(\beta\)=`r m3.Fbk.Bt`)* and Youtube *(B=`r m3.Yut.B`, t=`r m3.Yut.t`, p  `r m3.Yut.p`, \(\beta\)=`r m3.Yut.Bt`)* were statistically significant positively associated with engagement rate, but not Instragram *(B=`r m3.Ins.B`, t=`r m3.Ins.t`, p  `r m3.Ins.p`, \(\beta\)=`r m3.Ins.Bt`)*.
+
+```{r, moderation-1, out.width = '510px', fig.align='center', fig.cap='Interaction effect between social network and negative emotional resonance on engagement rate', warning=FALSE}
+  Int.Plot.1
+```
+
+The positive association between negative emotional resonance and engagement rate *(B=`r m3.neg.B`, t=`r m3.neg.t`, p  `r m3.neg.p`, \(\beta\)=`r m3.neg.Bt`)* was moderated statistically significant and negatively by Youtube *(B=`r m3.NegYut.B`, t=`r m3.NegYut.t`, p  `r m3.NegYut.p`, \(\beta\)=`r m3.NegYut.Bt`)* and Facebook *(B=`r m3.NegFbk.B`, t=`r m3.NegFbk.t`, p  `r m3.NegFbk.p`, \(\beta\)=`r m3.NegFbk.Bt`)*, messages with negative emotional resonance posted on these social platforms reducing statistically significant the initial positive association. No moderation effect of Instagram was identified on association between negative emotional resonance and engagement rate *(B=`r m3.NegIns.B`, t=`r m3.NegIns.t`, p  `r m3.NegIns.p`, \(\beta\)=`r m3.NegIns.Bt`)* (see Fig. \@ref(fig:moderation-1))
+
+\center _Please Insert Fig. \@ref(fig:moderation-1) around here_ \justify
+
+```{r, moderation-2, out.width = '510px', fig.align='center', fig.cap='Interaction effect between social network and positive emotional resonance on engagement rate', warning=FALSE}
+  Int.Plot.2
+```
+
+Between positive emotional resonance and engagement rate was no statistically significant association, *(B=`r m3.poz.B`, t=`r m3.poz.t`, p  `r m3.poz.p`, \(\beta\)=`r m3.poz.Bt`)*, but our results showed a positive and statistically significant interaction effect with Instagram *(B=`r m3.PozIns.B`, t=`r m3.PozIns.t`, p  `r m3.PozIns.p`, \(\beta\)=`r m3.PozIns.Bt`)* and Youtube *(B=`r m3.PozYut.B`, t=`r m3.PozYut.t`, p  `r m3.PozYut.p`, \(\beta\)=`r m3.PozYut.Bt`)* (see Fig. \@ref(fig:moderation-2))
+
+\center _Please Insert Fig. \@ref(fig:moderation-2) around here_ \justify
+
+Compared to Twetter posts, if the messages with positive emotional resonance were posted on Instagram or Youtube, the engagement rate increased statistically significant and the effect was most powerfull on Instagram than on Youtube. No interaction effect was observed on Facebook related on positive emotional resonance *(B=`r m3.PozFbk.B`, t=`r m3.PozFbk.t`, p  `r m3.PozFbk.p`, \(\beta\)=`r m3.PozFbk.Bt`)*
 
 # Discussion
 This investigation commenced with the aim of assessing the impact of citizen engagement on the European Commission's social media platforms by specifically evaluating the influence of emotionally resonant communications on public engagement levels. The discussion here explores the findings derived from the study and their implications, juxtaposing them against the extant body of research on social media engagement, public institutional communication, and the role of emotional resonance in these facets.
