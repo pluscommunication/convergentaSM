@@ -1,98 +1,83 @@
 ---
-title: 'From Likes to Change: Assessing the Impact of Citizen Engagement on the European
-  Commission''s Social Media Platforms'
-author:
-- name: Tanase Tasențe
-  affiliation: '1'
-  corresponding: yes
-  address: Postal address
-  email: "tanase.tasente@365.univ-ovidius.ro"
-  role:
-  - Equal contribution
-  - Conceptualization
-  - Data curation
-  - Investigation
-  - Formal analysis
-  - Resources
-  - Software
-  - Visualization
-  - "Writing - Original Draft Preparation"
-  - "Writing - Review & Editing"
-- name: "Cristian Opariuc-Dan"
-  affiliation: '1,2'
-  role:
-  - Equal contribution
-  - "Writing - Original Draft Preparation"
-  - "Writing - Review & Editing"
-  - Data curation
-  - Formal analysis
-  - Resources
-  - Software
-  - Visualization
-- name: Cristina Dana Popescu
-  affiliation: '1'
-  role:
-  - "Writing - Original Draft Preparation"
-  - "Writing - Review & Editing"
-  - Professional proofreading
-shorttitle: Impact of Citizen Engagement on the European Commission's Social Media
-  Platforms
-output:
-  pdf_document: papaja::apa6_pdf
-  word_document: papaja::apa6_docx
-  html_document:
-    df_print: paged
+title             : "From Likes to Change: Assessing the Impact of Citizen Engagement on the European Commission's Social Media Platforms"
+shorttitle: "Impact of Citizen Engagement on the European Commission's Social Media Platforms"
+author            :
+- name            : "Tanase Tasențe"
+  affiliation     : '1'
+  corresponding   : yes
+  address         : "Aleea Universității"
+  email           : "tanase.tasente@365.univ-ovidius.ro"
+  role            :
+    - "Equal contribution"
+    - "Conceptualization"
+    - "Data curation"
+    - "Investigation"
+    - "Formal analysis"
+    - "Resources"
+    - "Software"
+    - "Visualization"
+    - "Writing - Original Draft Preparation"
+    - "Writing - Review & Editing"
+- name            : "Cristian Opariuc-Dan"
+  affiliation     : '1,2'
+  role            :
+    - "Equal contribution"
+    - "Writing - Original Draft Preparation"
+    - "Writing - Review & Editing"
+    - "Data curation"
+    - "Formal analysis"
+    - "Resources"
+    - "Software"
+    - "Visualization"
+- name            : "Cristina Dana Popescu"
+  affiliation     : '1'
+  role            :
+    - "Writing - Original Draft Preparation"
+    - "Writing - Review & Editing"
+    - "Professional proofreading"
+affiliation     :
+  - id          : '1'
+    institution : "Ovidius University of Constanța, Romania"
+  - id          : '2'
+    institution : "University of Bucharest, Romania"
 authornote: |
-  Department of Administrative and Social Sciences
-abstract: "This study investigates the role of emotional resonance in social media
-  communications from the European Commission (EC) and its impact on public participation
-  across various platforms including Facebook, Instagram, Twitter, and YouTube. Findings
-  indicate that emotionally resonant communications significantly enhance public engagement,
-  with variations depending on the specific platform. Both positive and negative emotional
-  resonance significantly impact participation, with the latter having a more pronounced
-  effect. Our research highlights the critical importance of platform-specific strategies
-  and the incorporation of emotional resonance in public communications to foster
-  participation in policy dialogues. An analysis of the engagement rates and sentiment
-  across platforms reveals unique tonal variations in the EC's discourse. The effect
-  of emotional resonance on public engagement is also found to be moderated by the
-  choice of social media platform, with certain platforms more significantly moderating
-  the relationship between emotional resonance and engagement than others. This study
-  lays the groundwork for refining communication strategies within a multi-platform
-  digital governance environment.\n"
-keywords: "social media, public institutions, emotional resonance, public engagement,
-  platform-specific strategies, digital governance"
-wordcount: 4067 words in text body 1034 words in reference section
-bibliography:
-- "r-references.bib"
-- references.bib
-floatsintext: no
-linenumbers: yes
-draft: no
-mask: no
-figurelist: no
-tablelist: no
-footnotelist: no
-documentclass: apa7
-classoption: man
-csl: apa.csl
-affiliation:
-- id: '1'
-  institution: Ovidius University of Constanța, Romania
-- id: '2'
-  institution: University of Bucharest, Romania
-header-includes: \usepackage{ragged2e}
+  
+  
+  Tanase Tasente (Orcid ID: https://orcid.org/0000-0002-3164-5894) is a lecturer and ERASMUS coordinator at the Faculty of Law and Administrative Sciences at Ovidius University in Constanta. He holds a bachelor's, master's, and doctoral degree in Communication Sciences and a master's degree in European Administration, Institutions, and Public Policies. With over 100 published scientific papers and 4 authored books on institutional communication through social media and public policy strategies, the author has made significant contributions to the academic community. Additionally, he is the director of two international public relations companies, Plus Communication and International Communication & PR, where they have overseen marketing, advertising, and public relations campaigns for renowned multinational companies. His combination of academic and professional experience has equipped them with the necessary skills and knowledge to excel in various fields of communication and administration.
+  Cristian Opariuc-Dan (Orcid ID: https://orcid.org/0000-0003-4079-0142) is a lecturer at the Faculty of Law and Administrative Sciences at Ovidius University in Constanta. He holds a Bachelor's degree in Psychology, a Master's degree in Administrative Sciences, and a PhD in Psychology. He serves as the coordinator of the Law and Public Administration programs (part-time education) at Ovidius University and is an associate professor in the Doctoral Schools of Psychology and Education Sciences at the University of Bucharest and "Al. I. Cuza" University in Iasi. With over 50 scientific articles published in specialized journals and as the author and co-author of 5 books in the field of statistics and data analysis, he has demonstrated his expertise in the academic field.
+abstract: |
+  This study investigates the role of emotional resonance in social media  communications from the European Commission (EC) and its impact on public participation across various platforms including Facebook, Instagram, Twitter, and YouTube. Findings  indicate that emotionally resonant communications significantly enhance public engagement, with variations depending on the specific platform. Both positive and negative emotional resonance significantly impact participation, with the latter having a more pronounced  effect. Our research highlights the critical importance of platform-specific strategies and the incorporation of emotional resonance in public communications to foster participation in policy dialogues. An analysis of the engagement rates and sentiment across platforms reveals unique tonal variations in the EC's discourse. The effect of emotional resonance on public engagement is also found to be moderated by the choice of social media platform, with certain platforms more significantly moderating the relationship between emotional resonance and engagement than others. This study lays the groundwork for refining communication strategies within a multi-platform   digital governance environment.
+  
+keywords        : "social media, public institutions, emotional resonance, public engagement, platform-specific strategies, digital governance"
+wordcount       : "4275 words in text body 1034 words in reference section"
+bibliography    : ["r-references.bib", "references.bib"]
+floatsintext    : no
+linenumbers     : yes
+draft           : no
+mask            : no
+figurelist      : no
+tablelist       : no
+footnotelist    : no
+documentclass   : "apa7"
+classoption     : "man"
+csl             : apa.csl
+header-includes : \usepackage{ragged2e}
+output          :
+  pdf_document  : papaja::apa6_pdf
+  html_document :
+    df_print    : paged
+  word_document : papaja::apa6_docx
 ---
 
-```{r setup, include = FALSE}
+```{r setup, include = FALSE, echo=FALSE}
   library(papaja); library(knitr); library(readxl); library(dplyr); library(psych)
   library(sasLM);library(rstatix); library(naniar); library(lubridate); library(flextable)
   library(caret); library(ggpubr); library(lm.beta); library(relaimpo); library(nortest)
   library(interactions); library(misty); library(tm); library(SentimentAnalysis); library(ggplot2)
-
   r_refs("r-references.bib")
 ```
 
-```{r analysis-preferences}
+```{r analysis-preferences, echo=FALSE}
 # Seed for random number generation
   set.seed(44542)
   knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
