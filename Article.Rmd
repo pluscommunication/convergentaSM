@@ -43,16 +43,15 @@ affiliation     :
 authornote: |
   
   
+    
+    
     Tanase Tasente (Orcid ID: https://orcid.org/0000-0002-3164-5894) is a lecturer and ERASMUS coordinator at the Faculty of Law and Administrative Sciences at Ovidius University in Constanta. He holds a bachelor's, master's, and doctoral degree in Communication Sciences and a master's degree in European Administration, Institutions, and Public Policies. With over 100 published scientific papers and 4 authored books on institutional communication through social media and public policy strategies, the author has made significant contributions to the academic community. Additionally, he is the director of two international public relations companies, Plus Communication and International Communication & PR, where they have overseen marketing, advertising, and public relations campaigns for renowned multinational companies. His combination of academic and professional experience has equipped them with the necessary skills and knowledge to excel in various fields of communication and administration.
-    
     Cristian Opariuc-Dan (Orcid ID: https://orcid.org/0000-0003-4079-0142) is a lecturer at the Faculty of Law and Administrative Sciences at Ovidius University in Constanta. He holds a Bachelor's degree in Psychology, a Master's degree in Administrative Sciences, and a PhD in Psychology. He serves as the coordinator of the Law and Public Administration programs (part-time education) at Ovidius University and is an associate professor in the Doctoral Schools of Psychology and Education Sciences at the University of Bucharest and "Al. I. Cuza" University in Iasi. With over 50 scientific articles published in specialized journals and as the author and co-author of 5 books in the field of statistics and data analysis, he has demonstrated his expertise in the academic field.
-    
     Cristina-Dana Popescu (Orcid ID: https://orcid.org/0009-0009-5280-6608) is a Lecturer at the Faculty of Letters, the Faculty of Law and Administrative Sciences and at the Faculty of Mathematics and Informatics at Ovidius University in Constanta. She holds a Bachelor’s degree in Philology at the University of Bucharest, the Faculty of Foreign Languages and Literatures, English and German Department, a Master's degree in Philosophy at the University “Al. I. Cuza”, Iaşi, Romania and a Ph.D. in Philology - British and American Literature, at the University “Al. I. Cuza”, Iaşi, Romania. She has been teaching English since 1999 being also a School Director for 12 years of a private High School in Constanta, she is an accomplished teacher with demonstrated ability to teach, motivate and direct students while maintaining high interest and achievement. She holds the Excellence Award within the Faculty of Letters, as the winner of the Performance in Education Competition at Ovidius University in Constanta. She also holds internationally recognized trainings in the field of psychology, being a licensed NLP Practitioner at the International Association for Neuro-Linguistic Programming and also a licensed of Silva Method, the Immersion Silva Life and Intuition System at Silva International Headquarters, Laredo, Texas, USA. She also holds the qualification of Trainer, COR Code 242401, certified by SC Training & Teaching Center, București.With over 30 scientific articles published in specialized journals at national and international conferences, author of ISI and BDI articles, participant both in CNCSIS grant teams and in University Projects as Expert in the Study Programs Pillars and Expert in Educational Material Development and also author of 3 books and co-author of 1 book in the field of literature and various specialized languages, she has demonstrated her expertise in the academic field.
-
 abstract: |
   This research undertakes an examination of the function that emotional resonance plays in the social media communications disseminated by the European Commission (EC) and its subsequent influence on public involvement across a multitude of platforms such as Facebook, Instagram, Twitter, and YouTube. The findings of this research underscored that communications laden with emotional resonance considerably amplify public engagement, though the magnitude of this amplification is dependent on the individual platform. Furthermore, both positive and negative forms of emotional resonance exhibit a noteworthy influence on public participation. However, it has been observed that the impact of negative emotional resonance is more distinct and profound. Our research underscored the pivotal significance of employing strategies tailored to specific platforms and integrating emotional resonance into public communications as a means to stimulate participation in policy discourse.An analytical examination of both engagement rates and sentiment across various platforms unveils distinctive tonal nuances within the European Commission's discourse.
   
-The impact of emotional resonance on public engagement is noted to be contingent upon the specific social media platform employed, as certain platforms demonstrate a more pronounced moderating effect on the association between emotional resonance and engagement relative to others. This research provided the foundational framework for the enhancement of communicative strategies within a multi-platform digital governance environment comprising multiple platforms.
+  The impact of emotional resonance on public engagement is noted to be contingent upon the specific social media platform employed, as certain platforms demonstrate a more pronounced moderating effect on the association between emotional resonance and engagement relative to others. This research provided the foundational framework for the enhancement of communicative strategies within a multi-platform digital governance environment comprising multiple platforms.
   
 keywords        : "social media, public institutions, emotional resonance, public engagement, platform-specific strategies, digital governance"
 wordcount       : "4275 words in text body 1034 words in reference section"
@@ -69,10 +68,10 @@ classoption     : "man"
 csl             : apa.csl
 header-includes : \usepackage{ragged2e}
 output          :
-  pdf_document  : papaja::apa6_pdf
+  word_document : papaja::apa6_docx
   html_document :
     df_print    : paged
-  word_document : papaja::apa6_docx
+  pdf_document  : papaja::apa6_pdf
 ---
 
 ```{r setup, include = FALSE, echo=FALSE}
